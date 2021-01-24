@@ -6,7 +6,7 @@ import com.gkalal.newsapp.domain.repositories.NewsRepository
 
 class GetHeadlinesUseCase(private val newsRepository: NewsRepository) {
 
-    suspend fun execute(): Resource<NewsApiResponse> {
-        return newsRepository.getNewsHeadlines()
+    suspend fun execute(country: String, page: Int): Resource<NewsApiResponse> {
+        return newsRepository.getNewsHeadlines(country, page)
     }
 }

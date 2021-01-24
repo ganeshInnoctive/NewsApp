@@ -4,5 +4,5 @@ import com.gkalal.newsapp.data.model.NewsApiResponse
 import retrofit2.Response
 
 interface NewsRemoteDataSource {
-    suspend fun getTopHeadlines(): Response<NewsApiResponse>
+    suspend fun getTopHeadlines(country: String, page: Int): Response<NewsApiResponse>
 }

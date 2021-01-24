@@ -18,8 +18,8 @@ class NewsRepositoryImpl(private val newsRemoteDataSource: NewsRemoteDataSource)
         return Resource.Error(response.message())
     }
 
-    override suspend fun getNewsHeadlines(): Resource<NewsApiResponse> {
-        return responseToResource(newsRemoteDataSource.getTopHeadlines())
+    override suspend fun getNewsHeadlines(country: String, page: Int): Resource<NewsApiResponse> {
+        return responseToResource(newsRemoteDataSource.getTopHeadlines(country, page))
     }
 
     override suspend fun getSearchedNews(searchQuery: String): Resource<NewsApiResponse> {
